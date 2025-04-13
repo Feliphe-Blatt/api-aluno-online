@@ -92,31 +92,31 @@ O sistema permite as seguintes operações para a entidade Aluno:
 ## Testando a API com Insomnia
 
 ### Criação de Aluno (POST)
-![Insomnia - Criação de Aluno](./imgs/insomnia-post-aluno.png)
+![Insomnia - Criação de Aluno](./docs/tests-insomnia/criarAluno.png)
 
 Nesta imagem, vemos a requisição POST para `/alunos` com o seguinte corpo:
 ```json
 {
-  "nome": "Maria Silva",
+  "nome": "Denis Pimentinha",
   "cpf": "12345678900",
-  "email": "maria@email.com"
+  "email": "denis@email.com"
 }
 ```
 
 O servidor retorna o status HTTP 201 (Created), confirmando o sucesso da operação.
 
 ### Listagem de Alunos (GET)
-![Insomnia - Listagem de Alunos](./imgs/insomnia-get-alunos.png)
+![Insomnia - Listagem de Alunos](./docs/tests-insomnia/listarTodosAlunos.png)
 
 A requisição GET para `/alunos` retorna todos os alunos cadastrados no sistema com status 200 (OK).
 
 ### Busca de Aluno por ID (GET)
-![Insomnia - Busca por ID](./imgs/insomnia-get-aluno-id.png)
+![Insomnia - Busca por ID](./docs/tests-insomnia/buscarAlunoPorId.png)
 
 Ao fazer uma requisição GET para `/alunos/1`, recebemos os detalhes do aluno com ID 1.
 
 ### Remoção de Aluno (DELETE)
-![Insomnia - Remoção de Aluno](./imgs/insomnia-delete-aluno.png)
+![Insomnia - Remoção de Aluno](./docs/tests-insomnia/deletarAlunoPorId.png)
 
 A requisição DELETE para `/alunos/1` remove o aluno e retorna status 204 (No Content).
 
@@ -151,5 +151,15 @@ SELECT COUNT(*) FROM aluno;
 - O banco de dados mantém a integridade dos dados conforme esperado
 
 ## Autor
+<div>
+  <img width="200px" src="https://github.com/Feliphe-Blatt.png" alt="Foto de perfil de Feliphe-Blatt"></img>
+  
+  [Feliphe-Blatt](https://github.com/Feliphe-Blatt)
+</div>
 
-Feliphe-Blatt
+## Professor
+<div>
+  <img width="200px" src="https://github.com/kelsonvictr.png" alt="Foto de perfil de kelsonvictr"></img>
+  
+[Kelson Victor](https://github.com/kelsonvictr)
+</div>
