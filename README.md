@@ -11,7 +11,9 @@ Este projeto implementa uma API REST para gerenciamento de alunos utilizando Spr
 - Spring Data JPA
 - Maven
 - Lombok
-- Banco de Dados Relacional (JPA/Hibernate)
+- PostgreSQL
+- Insomnia
+- DBeaver
 
 ## Estrutura do Projeto
 
@@ -32,6 +34,9 @@ O projeto segue uma arquitetura em camadas:
 
 - Java 17+
 - Maven 3.6+
+- PostgreSQL 12+
+- Insomnia (para testes de API)
+- DBeaver (para visualização do banco de dados)
 
 ## Funcionalidades
 
