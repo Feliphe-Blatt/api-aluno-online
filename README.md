@@ -123,12 +123,11 @@ A requisição DELETE para `/alunos/1` remove o aluno e retorna status 204 (No C
 ## Visualização no Banco de Dados (DBeaver)
 
 ### Tabela de Alunos
-![DBeaver - Tabela de Alunos](./imgs/dbeaver-tabela-alunos.png)
+![DBeaver - Tabela de Alunos](./docs/tests-dbeaver/tabelaAlunos.png)
 
 Nesta captura, podemos ver a tabela `aluno` no banco de dados PostgreSQL contendo os registros inseridos através da API. Os campos `id`, `nome`, `cpf` e `email` são exibidos com os valores correspondentes.
 
 ### Consulta SQL
-![DBeaver - Consulta SQL](./imgs/dbeaver-consulta-sql.png)
 
 Exemplo de consultas SQL executadas no DBeaver:
 
@@ -142,6 +141,8 @@ SELECT * FROM aluno WHERE id = 1;
 -- Contagem de alunos no sistema
 SELECT COUNT(*) FROM aluno;
 ```
+
+![DBeaver - Consulta SQL](./docs/tests-dbeaver/consultasSql.png)
 
 ## Observações
 
