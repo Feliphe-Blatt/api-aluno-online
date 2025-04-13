@@ -43,7 +43,7 @@ O projeto segue uma arquitetura em camadas:
 ## Como Executar
 
 1. Clone o repositório
-2. Configure o banco de dados no arquivo `application.properties`
+2. Configure o banco de dados no arquivo `application.properties` localizado em `resources`
 3. Execute o comando: `mvn spring-boot:run`
 
 ## Pré-requisitos
