@@ -49,6 +49,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
   }
 }</component>
+}</component>
   <component name="RunManager">
     <configuration name="AlunoOnlineApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="br.com.alunoonline.api.AlunoOnlineApplication" />
