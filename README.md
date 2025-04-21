@@ -92,11 +92,65 @@ O sistema permite as seguintes operações para a entidade Aluno:
 - **DELETE** `/alunos/{id}`: Remove um aluno pelo ID
   - Response: Status 204 (No Content)
 
+
+### Professor
+
+O sistema permite as seguintes operações para a entidade Professor:
+
+- **Criar Professor**: Cadastro de novos professores no sistema com nome, CPF e email
+- **Listar Professores**: Visualização de todos os professores cadastrados
+- **Buscar Professor**: Consulta de detalhes de um professor específico pelo ID
+- **Remover Professor**: Exclusão de um professor pelo seu ID
+
+### Endpoints
+
+#### Professores
+
+- **POST** `/professores`: Cria um novo professor
+  - Body:
+  ```json
+  {
+    "nome": "Nome do Professor",
+    "cpf": "12345678900",
+    "email": "professor@email.com"
+  }
+  ```
+  - Response: Status 201 (Created)
+
+- **GET** `/professores`: Lista todos os professores cadastrados
+  - Response: Status 200 (OK)
+  ```json
+  [
+    {
+      "id": 1,
+      "nome": "Nome do Professor",
+      "cpf": "12345678900",
+      "email": "professor@email.com"
+    }
+  ]
+  ```
+
+- **GET** `/professores/{id}`: Busca um professor pelo ID
+  - Response: Status 200 (OK)
+  ```json
+  {
+    "id": 1,
+    "nome": "Nome do Professor",
+    "cpf": "12345678900",
+    "email": "professor@email.com"
+  }
+  ```
+
+- **DELETE** `/professores/{id}`: Remove um professor pelo ID
+  - Response: Status 204 (No Content)
+
 # Exemplos de Uso
+
+>Os exemplos a seguir demonstram como utilizar a API para realizar operações CRUD (Create, Read, Update, Delete) tanto para alunos quanto para professores, modificando o endpoint para /alunos ou /professores conforme necessário.
 
 ## Testando a API com Insomnia
 
-### Criação de Aluno (POST)
+### Criação de Aluno/Professor (POST)
 ![Insomnia - Criação de Aluno](./docs/tests-insomnia/criarAluno.png)
 
 Nesta imagem, vemos a requisição POST para `/alunos` com o seguinte corpo:
@@ -110,7 +164,7 @@ Nesta imagem, vemos a requisição POST para `/alunos` com o seguinte corpo:
 
 O servidor retorna o status HTTP 201 (Created), confirmando o sucesso da operação.
 
-### Listagem de Alunos (GET)
+### Listagem de Alunos/Professores (GET)
 ![Insomnia - Listagem de Alunos](./docs/tests-insomnia/listarTodosAlunos.png)
 
 A requisição GET para `/alunos` retorna todos os alunos cadastrados no sistema com status 200 (OK).
@@ -152,7 +206,7 @@ SELECT COUNT(*) FROM aluno;
 ## Observações
 
 - As capturas de tela demonstram o fluxo completo desde a requisição HTTP até o armazenamento no banco de dados
-- A estrutura da tabela no PostgreSQL reflete exatamente o modelo definido na classe `Aluno.java`
+- A estrutura da tabela no PostgreSQL reflete exatamente o modelo definido na classe `Aluno.java`, bem como em `Professor.java`
 - As operações CRUD são realizadas com sucesso através da API
 - O banco de dados mantém a integridade dos dados conforme esperado
 

@@ -6,6 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="4a4e8957-8fbf-40f9-8747-ebabcfabddae" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/tests-dbeaver/consultasSql.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/tests-dbeaver/consultasSql.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/tests-dbeaver/tabelaAlunos.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/tests-dbeaver/tabelaAlunos.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/tests-insomnia/buscarAlunoPorId.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/tests-insomnia/buscarAlunoPorId.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/tests-insomnia/criarAluno.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/tests-insomnia/criarAluno.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/tests-insomnia/deletarAlunoPorId.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/tests-insomnia/deletarAlunoPorId.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/tests-insomnia/listarTodosAlunos.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/tests-insomnia/listarTodosAlunos.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,15 +38,15 @@
     </option>
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 6
-}</component>
+    &quot;associatedIndex&quot;: 6
+    }</component>
   <component name="ProjectId" id="2vQJFj0LuKIprcEcp7v69pakowl" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
+    &quot;keyToString&quot;: {
     &quot;Application.AlunoOnlineApplication.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
@@ -47,9 +54,8 @@
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/aceve/OneDrive/Documentos/GitHub/controle-financeiro&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
-  }
-}</component>
-}</component>
+    }
+    }</component>
   <component name="RunManager">
     <configuration name="AlunoOnlineApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="br.com.alunoonline.api.AlunoOnlineApplication" />
