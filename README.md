@@ -23,10 +23,15 @@ A documentação interativa da API está disponível via Swagger UI. Com ela, é
 
 - Acesse: [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html)
 
-## Prints das Funcionalidades em ação
+## Funcionalidades em ação
 
+### Insomnia
 - [Prints do Insomnia (testes de endpoints)](./docs/tests-insomnia)
+- [Arquivo de exportação do insomnia](.docs/exportInsomnia.yaml)
+
+### DBeaver
 - [Prints do DBeaver (visualização do banco)](./docs/tests-dbeaver)
+- [Arquivo de exportação do DBeaver](./docs/exportDBeaver.sql)
 
 ## Entidades  
 O sistema possui as seguintes entidades principais:
