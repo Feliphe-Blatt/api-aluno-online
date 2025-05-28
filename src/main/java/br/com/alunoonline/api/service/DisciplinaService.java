@@ -20,6 +20,10 @@ public class DisciplinaService {
         disciplinaRepository.save(disciplina);
     }
     
+    public List<Disciplina> listarDisciplinasPorProfessorId(Long professorId) {
+        return disciplinaRepository.findByProfessorId(professorId);
+    }
+    
     public List<Disciplina> listarTodasDisciplinas() {
         return disciplinaRepository.findAll();
     }
