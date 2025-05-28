@@ -4,9 +4,36 @@
 
 Esta API gerencia informações de alunos, professores e disciplinas para uma instituição de ensino. Ela oferece operações CRUD completas para todas as entidades.
 
-## Funcionalidades
+## Tecnologias utilizadas
 
-> Os prints de todas as funcionalidades estão [AQUI](./docs)
+- Spring Boot
+- Spring Data JPA
+- H2 Database (ambiente de desenvolvimento)
+- Maven
+
+## Como executar
+
+1. Clone o repositório
+2. Execute `mvn spring-boot:run`
+3. A API estará disponível em `http://localhost:8080`
+
+## Documentação Swagger
+
+A documentação interativa da API está disponível via Swagger UI. Com ela, é possível explorar e testar todos os endpoints de forma visual e prática.
+
+- Acesse: [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html)
+
+## Prints das Funcionalidades em ação
+
+- [Prints do Insomnia (testes de endpoints)](./docs/tests-insomnia)
+- [Prints do DBeaver (visualização do banco)](./docs/tests-dbeaver)
+
+## Entidades  
+O sistema possui as seguintes entidades principais:
+- **Aluno**: Representa os alunos da instituição, contendo informações como nome e email.
+- **Professor**: Representa os professores, com informações como nome e email.
+- **Disciplina**: Representa as disciplinas oferecidas, contendo nome e código.
+- **Matrícula**: Representa a associação entre alunos e disciplinas, permitindo o controle de quais alunos estão matriculados em quais disciplinas.
 
 ### Aluno
 
@@ -37,6 +64,11 @@ O sistema permite as seguintes operações para a entidade Disciplina:
 - **Buscar Disciplina**: Consulta de detalhes de uma disciplina específica pelo ID
 - **Atualizar Disciplina**: Atualização de informações de uma disciplina existente
 - **Remover Disciplina**: Exclusão de uma disciplina pelo seu ID
+
+### Matricula
+O sistema permite as seguintes operações para a entidade Matricula:
+
+- **Criar Matricula**: Cadastro de novas matrículas associando alunos a disciplinas
 
 ## API Endpoints
 
@@ -181,15 +213,30 @@ O sistema permite as seguintes operações para a entidade Disciplina:
 - **DELETE** `/disciplinas/{id}`: Remove uma disciplina pelo ID
   - Response: Status 204 (No Content)
 
-## Tecnologias utilizadas
+- **GET** `/disciplinas/professor/{professorId}`: Lista disciplinas por professor
+  - Response: Status 200 (OK)
+  ```json
+  [
+    {
+      "id": 1,
+      "nome": "Matemática",
+      "codigo": "MAT101"
+    }
+  ]
+  ```
 
-- Spring Boot
-- Spring Data JPA
-- H2 Database (ambiente de desenvolvimento)
-- Maven
+### Matrículas
 
-## Como executar
+- **POST** `/matriculas`: Cria uma nova matrícula
+  - Body:
+  ```json
+  {
+    "alunoId": 1,
+    "disciplinaId": 1
+  }
+  ```
+  - Response: Status 201 (Created)
 
-1. Clone o repositório
-2. Execute `mvn spring-boot:run`
-3. A API estará disponível em `http://localhost:8080`
+- **PATCH** `/matriculas/trancar/{id}`: Tranca uma matrícula pelo ID
+  - Response: Status 204 (No Content)
+
