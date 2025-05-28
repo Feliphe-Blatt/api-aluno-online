@@ -27,11 +27,11 @@ A documentação interativa da API está disponível via Swagger UI. Com ela, é
 
 ### Insomnia
 - [Prints do Insomnia (testes de endpoints)](./docs/tests-insomnia)
-- [Arquivo de exportação do insomnia](.docs/exportInsomnia.yaml)
+- [Arquivo de exportação do insomnia](docs/exportInsomnia.yaml)
 
 ### DBeaver
 - [Prints do DBeaver (visualização do banco)](./docs/tests-dbeaver)
-- [Arquivo de exportação do DBeaver](./docs/exportDBeaver.sql)
+- [Arquivo de exportação do DBeaver](/docs/exportDBeaver.sql)
 
 ## Entidades  
 O sistema possui as seguintes entidades principais:
