@@ -5,7 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4a4e8957-8fbf-40f9-8747-ebabcfabddae" name="Changes" comment="CRUD de professores e Disciplinas adicionados">
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/alunoonline/api/dtos/AtualizarNotasRequestDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/alunoonline/api/dtos/DisciplinasAlunoResponseDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/alunoonline/api/dtos/HistoricoAlunoResponseDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/exportDBeaver.sql" beforeDir="false" afterPath="$PROJECT_DIR$/docs/exportDBeaver.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/exportInsomnia.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docs/exportInsomnia.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/tests-dbeaver/tabelaAlunos.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/tests-dbeaver/tabelaAlunos.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/alunoonline/api/controller/MatriculaAlunoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/alunoonline/api/controller/MatriculaAlunoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/alunoonline/api/repository/MatriculaAlunoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/alunoonline/api/repository/MatriculaAlunoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/alunoonline/api/service/MatriculaAlunoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/alunoonline/api/service/MatriculaAlunoService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,18 +61,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.AlunoOnlineApplication.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/aceve/OneDrive/Documentos/GitHub/controle-financeiro&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.AlunoOnlineApplication.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/aceve/OneDrive/Documentos/GitHub/controle-financeiro",
+    "settings.editor.selected.configurable": "preferences.keymap"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="AlunoOnlineApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="br.com.alunoonline.api.AlunoOnlineApplication" />

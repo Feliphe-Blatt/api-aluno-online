@@ -1,5 +1,8 @@
 package br.com.alunoonline.api.service;
 
+import br.com.alunoonline.api.dtos.AtualizarNotasRequestDTO;
+import br.com.alunoonline.api.dtos.DisciplinasAlunoResponseDTO;
+import br.com.alunoonline.api.dtos.HistoricoAlunoResponseDTO;
 import br.com.alunoonline.api.enums.MatriculaAlunoStatusEnum;
 import br.com.alunoonline.api.model.MatriculaAluno;
 import br.com.alunoonline.api.repository.MatriculaAlunoRepository;
@@ -9,8 +12,14 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.List;
+
 @Service
 public class MatriculaAlunoService {
+  
+  private static final Double MEDIA_APROVACAO = 7.0;
+  
+  private static final Integer QUANTIDADE_NOTAS = 2;
   
   @Autowired
   MatriculaAlunoRepository matriculaAlunoRepository;
@@ -49,4 +58,73 @@ public class MatriculaAlunoService {
     matriculaAlunoRepository.save(matriculaAluno);
   }
   
+  public void atualizarNotas(Long matriculaAlunoId, AtualizarNotasRequestDTO atualizarNotasRequestDTO) {
+   
+    MatriculaAluno matriculaAluno = buscarMatriculaOuFalhar(matriculaAlunoId);
+    
+    if (atualizarNotasRequestDTO.getNota1() != null) {
+      matriculaAluno.setNota1(atualizarNotasRequestDTO.getNota1());
+    }
+    if (atualizarNotasRequestDTO.getNota2() != null) {
+      matriculaAluno.setNota2(atualizarNotasRequestDTO.getNota2());
+    }
+    
+    calcularMediaEModificarStatus(matriculaAluno);
+    matriculaAlunoRepository.save(matriculaAluno);
+  }
+  
+  public HistoricoAlunoResponseDTO emitirHistoricoAluno(Long alunoId){
+    
+    List<MatriculaAluno> matriculasAluno = matriculaAlunoRepository.findByAlunoId(alunoId);
+    
+    if (matriculasAluno.isEmpty()) {
+      throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Nenhuma matrícula encontrada para o aluno com ID: " + alunoId);
+    }
+    
+    HistoricoAlunoResponseDTO historicoAluno = new HistoricoAlunoResponseDTO();
+    
+    historicoAluno.setNomeAluno(matriculasAluno.get(0).getAluno().getNome());
+    historicoAluno.setEmailAluno(matriculasAluno.get(0).getAluno().getEmail());
+    historicoAluno.setCpfAluno(matriculasAluno.get(0).getAluno().getCpf());
+    
+    List<DisciplinasAlunoResponseDTO> disciplinas = matriculasAluno.stream()
+        .map(this::mapearParaDisciplinasAlunoResponseDTO)
+        .toList();
+    
+    historicoAluno.setDisciplinas(disciplinas);
+    
+    return historicoAluno;
+  }
+  
+  private MatriculaAluno buscarMatriculaOuFalhar(Long matriculaAlunoId) {
+    return matriculaAlunoRepository.findById(matriculaAlunoId)
+        .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Matrícula não encontrada com o ID: " + matriculaAlunoId));
+  }
+  
+  private Double calcularMedia(Double nota1, Double nota2) {
+    
+    return (nota1 != null && nota2 != null) ? (nota1 + nota2) / QUANTIDADE_NOTAS : null;
+  }
+  
+  private void calcularMediaEModificarStatus(MatriculaAluno matriculaAluno) {
+    
+      Double media = calcularMedia(matriculaAluno.getNota1(), matriculaAluno.getNota2());
+      
+      if (media != null) {
+          matriculaAluno.setStatus(media >= MEDIA_APROVACAO ? MatriculaAlunoStatusEnum.APROVADO : MatriculaAlunoStatusEnum.REPROVADO);
+      }
+  }
+  
+  private DisciplinasAlunoResponseDTO mapearParaDisciplinasAlunoResponseDTO(MatriculaAluno matriculaAluno) {
+    
+    DisciplinasAlunoResponseDTO response = new DisciplinasAlunoResponseDTO();
+    response.setNomeDisciplina(matriculaAluno.getDisciplina().getNome());
+    response.setNomeProfessor(matriculaAluno.getDisciplina().getProfessor().getNome());
+    response.setNota1(matriculaAluno.getNota1());
+    response.setNota2(matriculaAluno.getNota2());
+    response.setMedia(calcularMedia(matriculaAluno.getNota1(), matriculaAluno.getNota2()));
+    response.setStatusMatriculaAluno(matriculaAluno.getStatus());
+    
+    return response;
+  }
 }

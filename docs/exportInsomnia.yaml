@@ -470,6 +470,55 @@ collection:
             send: true
             store: true
           rebuildPath: true
+      - url: "{{ _.baseURL.baseURL }}/matriculas/atualizar-notas/5"
+        name: Atualizar Notas
+        meta:
+          id: req_a1cb2c84c6214d54825703c0cc803e1c
+          created: 1748905171002
+          modified: 1748914769721
+          isPrivate: false
+          sortKey: -1748387660394
+        method: PATCH
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"nota1": 7.0,
+            	"nota2": 4.5
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.baseURL.baseURL }}/matriculas/historico-aluno/1"
+        name: Histórico Aluno
+        meta:
+          id: req_e0e9033dbde34db39eb59860a843e2ec
+          created: 1748914731800
+          modified: 1748914817610
+          isPrivate: false
+          sortKey: -1748387660494
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
 cookieJar:
   name: Default Jar
   meta:

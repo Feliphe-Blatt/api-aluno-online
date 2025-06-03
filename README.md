@@ -69,11 +69,15 @@ O sistema permite as seguintes operações para a entidade Disciplina:
 - **Buscar Disciplina**: Consulta de detalhes de uma disciplina específica pelo ID
 - **Atualizar Disciplina**: Atualização de informações de uma disciplina existente
 - **Remover Disciplina**: Exclusão de uma disciplina pelo seu ID
+- **Listar Disciplinas por Professor**: Consulta de todas as disciplinas atribuídas a um professor específico pelo ID
 
 ### Matricula
 O sistema permite as seguintes operações para a entidade Matricula:
 
 - **Criar Matricula**: Cadastro de novas matrículas associando alunos a disciplinas
+- **Trancar Matrícula**: Permite trancar uma matrícula existente
+- **Atualizar Notas**: Permite atualizar as notas de uma matrícula
+- **Emitir Histórico do Aluno**: Gera o histórico escolar de um aluno
 
 ## API Endpoints
 
@@ -245,3 +249,32 @@ O sistema permite as seguintes operações para a entidade Matricula:
 - **PATCH** `/matriculas/trancar/{id}`: Tranca uma matrícula pelo ID
   - Response: Status 204 (No Content)
 
+- **PATCH** `/matriculas/atualizar-notas/{id}`: Atualiza as notas de uma matrícula
+  - Body:
+  ```json
+  {
+    "nota1": 8.5,
+    "nota2": 7.0
+  }
+  ```
+  - Response: Status 204 (No Content)
+
+- **GET** `/matriculas/historico-aluno/{alunoId}`: Emite o histórico escolar de um aluno
+  - Response: Status 200 (OK)
+  ```json
+  {
+    "nomeAluno": "João Silva",
+    "emailAluno": "joao.silva@email.com",
+    "cpfAluno": "123.456.789-00",
+    "disciplinas": [
+      {
+        "nomeDisciplina": "Matemática",
+        "nomeProfessor": "Maria Oliveira",
+        "nota1": 8.5,
+        "nota2": 7.0,
+        "media": 7.75,
+        "statusMatriculaAluno": "APROVADO"
+      }
+    ]
+  }
+  ```
