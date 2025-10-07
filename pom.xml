@@ -13,18 +13,26 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Aluno Online</name>
 	<description>api backend para sistema aluno online</description>
-	<url/>
+	<url>https://github.com/acevedos/api-aluno-online</url>
 	<licenses>
-		<license/>
+		<license>
+			<name>MIT License</name>
+			<url>https://opensource.org/licenses/MIT</url>
+			<distribution>repo</distribution>
+		</license>
 	</licenses>
 	<developers>
-		<developer/>
+		<developer>
+			<id>acevedos</id>
+			<name>Seu Nome</name>
+			<email>seu@email.com</email>
+		</developer>
 	</developers>
 	<scm>
-		<connection/>
-		<developerConnection/>
-		<tag/>
-		<url/>
+		<connection>scm:git:https://github.com/acevedos/api-aluno-online.git</connection>
+		<developerConnection>scm:git:https://github.com/acevedos/api-aluno-online.git</developerConnection>
+		<tag>HEAD</tag>
+		<url>https://github.com/acevedos/api-aluno-online</url>
 	</scm>
 	<properties>
 		<java.version>17</java.version>
@@ -58,11 +66,16 @@
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger2</artifactId>
 			<version>3.0.0</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springdoc</groupId>
 			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
 			<version>2.3.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
 	</dependencies>
 
