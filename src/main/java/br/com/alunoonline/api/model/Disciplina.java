@@ -1,5 +1,6 @@
 package br.com.alunoonline.api.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -22,5 +23,6 @@ public class Disciplina {
 
     @ManyToOne
     @JoinColumn(name = "professor_id")
+    @JsonIgnoreProperties({"senha"})
     private Professor professor;
 }

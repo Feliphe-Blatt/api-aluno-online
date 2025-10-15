@@ -18,6 +18,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 @Service
 public class AuthService {
   
@@ -39,33 +42,42 @@ public class AuthService {
   @Autowired
   private PasswordEncoder passwordEncoder;
   
+  private static final Logger logger = LoggerFactory.getLogger(AuthService.class);
+  
   public LoginResponseDTO login(LoginRequestDTO loginRequest) {
-    // Carrega o usuário específico pelo tipo
-    UserDetails userDetails = userDetailsService.loadUserByUsernameAndType(
+    logger.info("Tentando login: email={}, tipoUsuario={}", loginRequest.getEmail(), loginRequest.getTipoUsuario());
+    UserDetails userDetails = null;
+    try {
+      userDetails = userDetailsService.loadUserByUsernameAndType(
         loginRequest.getEmail(),
         loginRequest.getTipoUsuario()
-    );
-    
-    // Autentica o usuário
-    Authentication authentication = authenticationManager.authenticate(
+      );
+      logger.info("Usuário encontrado: {}", userDetails.getUsername());
+    } catch (Exception e) {
+      logger.error("Usuário não encontrado ou erro ao buscar usuário: {}", e.getMessage());
+      throw e;
+    }
+    try {
+      Authentication authentication = authenticationManager.authenticate(
         new UsernamePasswordAuthenticationToken(
-            loginRequest.getEmail(),
-            loginRequest.getSenha()
+          loginRequest.getEmail(),
+          loginRequest.getSenha()
         )
-    );
-    
-    // Gera o token JWT
-    String token = jwtService.generateToken(userDetails);
-    
-    // Monta a resposta
-    UserDetailsImpl userDetailsImpl = (UserDetailsImpl) userDetails;
-    return new LoginResponseDTO(
+      );
+      logger.info("Autenticação bem-sucedida para: {}", loginRequest.getEmail());
+      String token = jwtService.generateToken(userDetails);
+      UserDetailsImpl userDetailsImpl = (UserDetailsImpl) userDetails;
+      return new LoginResponseDTO(
         token,
         userDetailsImpl.getId(),
         userDetailsImpl.getNome(),
         userDetailsImpl.getEmail(),
         userDetailsImpl.getTipoUsuario()
-    );
+      );
+    } catch (Exception e) {
+      logger.error("Falha na autenticação para {}: {}", loginRequest.getEmail(), e.getMessage());
+      throw e;
+    }
   }
   
   public LoginResponseDTO registrarAluno(Aluno aluno) {
@@ -134,4 +146,3 @@ public class AuthService {
     );
   }
 }
-

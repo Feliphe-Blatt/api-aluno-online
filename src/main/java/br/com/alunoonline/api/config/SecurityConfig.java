@@ -38,7 +38,15 @@ public class SecurityConfig {
             .authorizeHttpRequests(auth -> auth
                 // Endpoints públicos
                 .requestMatchers("/auth/**").permitAll()
-                .requestMatchers("/swagger-ui/**", "/v3/api-docs/**", "/swagger-ui.html").permitAll()
+                // Swagger/OpenAPI endpoints
+                .requestMatchers(
+                    "/v3/api-docs/**",
+                    "/swagger-ui/**",
+                    "/swagger-ui.html",
+                    "/swagger-resources/**",
+                    "/configuration/**",
+                    "/webjars/**"
+                ).permitAll()
                 
                 // Endpoints apenas para ALUNOS
                 .requestMatchers(HttpMethod.GET, "/alunos/{id}").hasAnyRole("ALUNO", "PROFESSOR")
@@ -47,12 +55,12 @@ public class SecurityConfig {
                 // Endpoints apenas para PROFESSORES
                 .requestMatchers("/professores/**").hasRole("PROFESSOR")
                 .requestMatchers("/disciplinas/**").hasRole("PROFESSOR")
-                .requestMatchers(HttpMethod.POST, "/matriculas-aluno").hasRole("PROFESSOR")
-                .requestMatchers(HttpMethod.PATCH, "/matriculas-aluno/trancar/**").hasRole("PROFESSOR")
-                .requestMatchers(HttpMethod.PATCH, "/matriculas-aluno/atualizar-notas/**").hasRole("PROFESSOR")
+                .requestMatchers(HttpMethod.POST, "/matriculas").hasRole("PROFESSOR")
+                .requestMatchers(HttpMethod.PATCH, "/matriculas/trancar/**").hasRole("PROFESSOR")
+                .requestMatchers(HttpMethod.PATCH, "/matriculas/atualizar-notas/**").hasRole("PROFESSOR")
                 
                 // Endpoints que aluno pode acessar seus próprios dados
-                .requestMatchers(HttpMethod.GET, "/matriculas-aluno/historico/**").hasRole("ALUNO")
+                .requestMatchers(HttpMethod.GET, "/matriculas/historico-aluno/**").hasRole("ALUNO")
                 
                 // Outros endpoints requerem autenticação
                 .anyRequest().authenticated()

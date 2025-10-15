@@ -1,5 +1,6 @@
 package br.com.alunoonline.api.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -34,5 +35,6 @@ public class Professor {
   
   @NotBlank(message = "Senha é obrigatória")
   @Size(min = 6, message = "Senha deve ter no mínimo 6 caracteres")
+  @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
   private String senha;
 }

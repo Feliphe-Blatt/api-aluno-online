@@ -1,6 +1,7 @@
 package br.com.alunoonline.api.model;
 
 import br.com.alunoonline.api.enums.MatriculaAlunoStatusEnum;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,10 +20,12 @@ public class MatriculaAluno {
 
     @ManyToOne
     @JoinColumn(name = "aluno_id")
+    @JsonIgnoreProperties({"senha"})
     private Aluno aluno;
 
     @ManyToOne
     @JoinColumn(name = "disciplina_id")
+    @JsonIgnoreProperties({"professor"})
     private Disciplina disciplina;
 
     private Double nota1;

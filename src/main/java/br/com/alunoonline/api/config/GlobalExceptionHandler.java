@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import java.util.HashMap;
 import java.util.Map;
 
-@RestControllerAdvice
+@RestControllerAdvice(basePackages = "br.com.alunoonline.api.controller")
 public class GlobalExceptionHandler {
   
   @ExceptionHandler(MethodArgumentNotValidException.class)
@@ -40,4 +40,3 @@ public class GlobalExceptionHandler {
     return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(error);
   }
 }
-
