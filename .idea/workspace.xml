@@ -5,22 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4a4e8957-8fbf-40f9-8747-ebabcfabddae" name="Changes" comment="CRUD de professores e Disciplinas adicionados">
-      <change afterPath="$PROJECT_DIR$/SETUP-MYSQL-README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/MIGRACAO-MYSQL.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/populate_database.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/populate_simple.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/setup-mysql.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/CHECKLIST-FLYWAY.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/EXPLICACAO-JWT-ROLES-MIGRACAO.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/EXPLICACAO-TECNICA-PROJETO.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/alunoonline/api/util/PasswordHashGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V1__create_table_aluno.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V2__create_table_professor.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V3__create_table_disciplina.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V4__create_table_matricula_aluno.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V5__insert_initial_data.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/alunoonline/api/config/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/alunoonline/api/config/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/alunoonline/api/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/alunoonline/api/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/alunoonline/api/config/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/alunoonline/api/config/SwaggerConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/alunoonline/api/model/Aluno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/alunoonline/api/model/Aluno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/alunoonline/api/model/Disciplina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/alunoonline/api/model/Disciplina.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/alunoonline/api/model/MatriculaAluno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/alunoonline/api/model/MatriculaAluno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/alunoonline/api/model/Professor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/alunoonline/api/model/Professor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/alunoonline/api/security/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/alunoonline/api/security/UserDetailsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/alunoonline/api/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/alunoonline/api/service/AuthService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -125,5 +120,13 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="CRUD de professores e Disciplinas adicionados" />
     <option name="LAST_COMMIT_MESSAGE" value="CRUD de professores e Disciplinas adicionados" />
+  </component>
+  <component name="github-copilot-workspace">
+    <instructionFileLocations>
+      <option value=".github/instructions" />
+    </instructionFileLocations>
+    <promptFileLocations>
+      <option value=".github/prompts" />
+    </promptFileLocations>
   </component>
 </project>
